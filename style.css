@@ -1,0 +1,120 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+h1.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+  -webkit-font-smoothing: antialiased;
+  margin-top: calc(4.375rem + 2.5rem);
+  margin-bottom: 2rem;
+}
+
+h2.sub-title{
+  font: 500 1.5rem 'Poppins', sans-serif;
+  text-align: center;
+  position: relative;
+  top: -2.5rem;
+}
+
+.text p {
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 2rem;
+  color: #767676;
+}
+
+.button {
+  display: inline-flex; /*leberar novas propriedades*/
+  padding: 0.8125rem;
+  width: 100%;
+  min-width: 12.5625rem;
+  background: hsla(179, 100%, 35%, 1);
+  
+  font: 400 1.125rem 'Poppins', sans-serif;
+  justify-content: center;
+  color: white;
+  
+  margin-bottom: 2.625rem;
+  border-radius: 0.25rem;
+}
+
+font {
+  color: hsla(179, 100%, 35%, 1);
+}
+
+.section {
+  padding: 2.31rem;
+  background: white;
+  width: 100%;
+}
+#header {
+  height: 4.375rem;
+  width: 100%;
+  background: chartreuse;
+  position: fixed; /*vai mudar para fixed*/
+  background: hsla(179, 100%, 35%, 1);
+}
+
+#header .content {
+  height: 4.375rem;
+  max-width: 80%;
+  margin: 0 auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*==================== HOME ======================================*/
+#home .container img{ /*Mulher se Exercitando*/
+  height: auto;
+  width: 100%;
+  border-radius: 0.25rem; 
+  margin-bottom: 4.06rem;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/*==================== ABOUT ======================================*/
+#about{
+  position: relative;
+  background: greenyellow;
+  width: 100%;
+}
+
+#about .container img{ /*Mulher se Exercitando*/
+  height: auto;
+  width: 100%;
+  border-radius: 0.25rem; 
+  /* margin-bottom: 4.6rem; */
+}
+
+#about .container .logo{ /* img Mulher se Exercitando*/
+  height: auto;
+  width: 100%;
+  border-radius: 0.25rem; 
+  margin-bottom: calc(4.06rem - 0.1625rem); 
+}
+
+#about .container .colaboradoras{ /* img Mulher se Exercitando*/
+  height: auto;
+  width: 100%;
+  border-radius: 0.25rem; 
+  margin-bottom: calc(4.06rem - 0.1625rem); 
+}
+
+body {
+  font: normal 1.125rem 'Poppins', sans-serif;
+}
+
