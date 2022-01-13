@@ -7,7 +7,10 @@
 a {
   text-decoration: none;
 }
-
+.container.grid {
+  width: 80%;
+  margin: 0 auto;
+}
 body {
   font: normal 1.125rem 'Poppins', sans-serif;
 }
@@ -15,25 +18,28 @@ body {
 h1.title {
   font-size: 2.25rem;
   font-weight: bold;
-  margin-bottom: 1.875rem;
+  /* margin-bottom: 1.875rem; */
   -webkit-font-smoothing: antialiased;
-  margin-top: calc(4.375rem + 2.5rem);
-  margin-bottom: 2rem;
+  /* margin-top: calc(4.375rem + 2.5rem); */
+  /* margin-bottom: 2rem; */
 }
 
 h2.sub-title {
   font: 500 1.5rem 'Poppins', sans-serif;
   text-align: center;
-  position: relative;
   top: -2.5rem;
 }
 
-.text p {
-  text-align: justify;
-  -webkit-font-smoothing: antialiased;
-  margin-bottom: 2rem;
-  color: #767676;
-  padding: 2.875rem;
+.container.grid {
+  /*o pai dos .icons*/
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text {
+  display: grid;
+  gap: 2rem;
+  margin: calc(4.375rem + 2.5rem) auto 2.6rem auto; /*top right bottom left*/
 }
 
 .button {
@@ -56,9 +62,18 @@ font {
 }
 
 .section {
-  padding: 2.31rem;
   background: white;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.sectionCards {
   width: 100%;
+}
+.container1.grid1 {
+  /*o pai dos .icons*/
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 2.2rem;
 }
 #header {
   height: 4.375rem;
@@ -86,21 +101,21 @@ font {
   margin-bottom: 4.06rem;
 }
 .grid {
-  display: grid;
+  display: flex;
   gap: 2rem;
+  flex-direction: column;
 }
 
 /*==================== ABOUT ======================================*/
 #about {
-  position: relative;
   background: white;
-  width: 100%;
 }
 
 #about .container .logo {
   /* img Mulher se Exercitando*/
   height: auto;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   border-radius: 0.25rem;
   margin-bottom: calc(4.06rem - 0.1625rem);
 }
@@ -108,8 +123,9 @@ font {
 #about .container .image {
   /*Mulher se Exercitando*/
   height: auto;
-  width: 100%;
+  width: 80%;
   border-radius: 0.25rem;
+  margin: 65px auto;
   /* margin-bottom: 4.6rem; */
 }
 
@@ -118,7 +134,11 @@ font {
   height: auto;
   width: 100%;
   border-radius: 0.25rem;
-  margin-bottom: calc(4.06rem - 0.1625rem);
+}
+
+#about .container.grid .text {
+  margin-top: 0;
+  text-align: justify;
 }
 /*ICONES ABOUT*/
 #about .container.grid .about-icon {
@@ -156,24 +176,22 @@ font {
   width: 15rem;
   text-align: center;
 }
-/*==================== ABOUT ======================================*/
+/*==================== section-cards ======================================*/
 #section-cards {
-  position: relative;
   background: #caf4f5;
-  width: 100%;
 }
 
 #section-cards .container-cards {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
 }
 
 #section-cards .container-cards .card {
-  width: 280px;
+  width: 22rem;
   height: 100%;
 
   display: flex;
@@ -191,7 +209,9 @@ font {
   box-shadow: 0px 0px 5px 0px black; /*X Y bluer borda*/
 }
 
-#section-cards .container-cards .card p {
+#section-cards .container1.grid1 .text p {
+  margin-top: 0.625rem; /*2rem do gap + 0.625rem da marging-top = 42px */
+  margin-bottom: 2.6rem;
   text-align: justify;
 }
 
@@ -202,13 +222,13 @@ font {
 /*==================== Information ======================================*/
 #information {
   background: white;
-  width: 100%;
-  position: relative;
+  width: 80%;
+  margin: 0 auto;
 }
 
-#information .container.grid .text {
-  position: relative;
-  top: 4rem;
+#information .container.grid {
+  width: 100%;
+  margin: 0 auto;
 }
 
 #information .container-cards {
@@ -221,7 +241,7 @@ font {
 }
 
 #information .container-cards .card {
-  width: 280px;
+  width: 100%;
   height: 100%;
 
   display: flex;
@@ -251,50 +271,63 @@ font {
   text-align: justify;
 }
 
+#information .text {
+  font-size: 1rem;
+  font-weight: 400;
+  display: grid;
+  gap: 2rem;
+  text-align: justify;
+}
+
 /*==================== CONTACT ======================================*/
 
 #contact {
   background: white;
-  width: 100%;
-  position: relative;
+  width: 80%;
+  margin: 0 auto;
 }
 
-#contact .text p {
-  text-align: justify;
-
-  margin-bottom: 2rem;
-  color: #767676;
-  padding: 1rem;
-}
-
-#contact .container-form {
-  width: 100%;
-  height: 100%;
-
+.container-form {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-
-  text-align: left;
-
-  background: white;
-  border-bottom: 8px solid #00b1ad;
-  padding: 2.25rem;
   border-radius: 0.25rem;
   box-shadow: 0px 0px 5px 0px black;
+  border-bottom: 8px solid #00b1ad;
 }
-#contact .container-form h2{
+
+#contact .container-form h2 {
   color: #00b1ad;
-} 
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+form {
+  padding: 0.75rem;
+}
 #contact .container-form .input {
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 #contact .container-form .input input,
+select,
+button {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#contact button {
+  height: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* #contact .container-form .input input,
 button,
 select {
   padding: 0.625rem;
   width: 100%;
-}
+} */
 #contact #teremo-politica {
   width: auto;
 }
@@ -304,7 +337,6 @@ select {
   align-items: center;
   justify-content: center;
 
- 
   color: white;
   background: hsla(179, 100%, 35%, 1);
   font-size: 1rem;
@@ -312,6 +344,90 @@ select {
 }
 
 #contact img {
-  position: absolute;
-  left: 85px;
+  height: 30px;
+}
+
+#contact .text .h2 {
+  color: #00b1ad;
+  margin: auto;
+}
+
+#contact .card {
+  width: auto;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  background: white;
+  border-bottom: 8px solid #00b1ad;
+
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px black; /*X Y bluer borda*/
+  margin-bottom: 1.5rem;
+}
+
+#contact .card .endereco {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#contact .card .endereco div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+footer {
+  background: #00b1ad;
+  width: 100%;
+}
+
+footer .container-logo {
+  background: #00b1ad;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+footer .container-logo img {
+  width: 13.9rem;
+  height: 7.06rem;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+footer .container-logo p {
+  font-size: 0.6rem;
+  color: white;
+  position: relative;
+  left: 6.8rem;
+}
+footer .text-footer {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top:  2rem;
+}
+
+footer .text-footer p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  line-height: 2rem;
+
+  text-align: center;
+}
+
+footer .text-footer .FooterDesenvolvido {
+  text-align: center;
 }
