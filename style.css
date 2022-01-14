@@ -7,6 +7,10 @@
 a {
   text-decoration: none;
 }
+
+ul {
+  list-style: none;
+}
 .container.grid {
   width: 80%;
   margin: 0 auto;
@@ -82,16 +86,70 @@ font {
   position: fixed; /*vai mudar para fixed*/
   background: hsla(179, 100%, 35%, 1);
 }
-
-#header .content {
+/*NAVEGATION*/
+#header nav {
   height: 4.375rem;
   max-width: 80%;
   margin: 0 auto;
-
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+header .container .menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+header .container.show .menu {
+  position: fixed;
+  z-index: ;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 181, 179);
+  display: grid;
+  /* -webkit-box-align: center; */
+  align-items: center;
+  left: 0px;
+  /* transition: all 0.3s ease-in-out 0s; */
+  opacity: 1;
+  top: 0px;
+  justify-content: center;
+  visibility: visible;
+}
+
+#header nav {
+  display: flex;/*tinha um z-index atrapalhando o
+  icon-close aparecer quando chamace a navegation*/
+  flex-direction: row-reverse;
+}
+
+header nav .icon-close {
+  position: absolute;
+  visibility: hidden;
+  background: red;
+}
+
+header .container.show .icon-close {
+  opacity: 1;
+  visibility: visible;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+header .container.show ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+
+header .container.show ul a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
 /*==================== HOME ======================================*/
 #home .container img {
   /*Mulher se Exercitando*/
@@ -353,14 +411,12 @@ select {
 }
 
 #contact .card {
-  width: auto;
+  width: 100%;
   height: 100%;
 
   display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  text-align: center;
+flex-direction: column;
+gap: 2rem;  
 
   background: white;
   border-bottom: 8px solid #00b1ad;
@@ -368,29 +424,42 @@ select {
   padding: 1rem;
   border-radius: 0.25rem;
   box-shadow: 0px 0px 5px 0px black; /*X Y bluer borda*/
-  margin-bottom: 1.5rem;
+}
+#contact .card .TitleCardContact {
+  font-weight: 600;
+font-size: 20px;
+text-align: center;
+color: #00B1AD;
+
+}
+#contact .card .ContentCardContact {
+font-size: 12px;
+gap: .8rem;
+text-align: start;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+#contact .card .ContentCardContact img{
+width: 16px;
+height: 18px;
 }
 
-#contact .card .endereco {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
 
-#contact .card .endereco div {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
 
 footer {
-  background: #00b1ad;
   width: 100%;
+  background: #00b1ad;
+}
+
+footer .section {
+  background: #00b1ad;
 }
 
 footer .container-logo {
   background: #00b1ad;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -408,7 +477,6 @@ footer .container-logo img {
 footer .container-logo p {
   font-size: 0.6rem;
   color: white;
-  position: relative;
   left: 6.8rem;
 }
 footer .text-footer {
@@ -416,7 +484,7 @@ footer .text-footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top:  2rem;
+  margin-top: 2rem;
 }
 
 footer .text-footer p {
